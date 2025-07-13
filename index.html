@@ -49,71 +49,16 @@
     <script type="text/babel">
         const { useState, useRef, useEffect } = React;
 
-        // Lucide React Icons (simplified inline versions)
+        // Simple Icons
         const Send = () => (
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
             </svg>
         );
 
-        const Code = () => (
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-            </svg>
-        );
-
-        const Zap = () => (
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-        );
-
-        const CheckCircle = () => (
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-        );
-
-        const Copy = () => (
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-            </svg>
-        );
-
-        const Download = () => (
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-            </svg>
-        );
-
-        const Settings = () => (
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-        );
-
-        const Brain = () => (
-            <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-            </svg>
-        );
-
-        const Terminal = () => (
-            <svg className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-        );
-
         const Lock = () => (
             <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-            </svg>
-        );
-
-        const LogOut = () => (
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
             </svg>
         );
 
@@ -130,6 +75,12 @@
             </svg>
         );
 
+        const Copy = () => (
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+        );
+
         const AICodingAssistant = () => {
             const [isAuthenticated, setIsAuthenticated] = useState(false);
             const [password, setPassword] = useState('');
@@ -138,24 +89,8 @@
             const [input, setInput] = useState('');
             const [conversation, setConversation] = useState([]);
             const [isGenerating, setIsGenerating] = useState(false);
-            const [selectedLanguage, setSelectedLanguage] = useState('javascript');
-            const [codeQuality, setCodeQuality] = useState('optimized');
-            const [showSettings, setShowSettings] = useState(false);
-            const messagesEndRef = useRef(null);
 
-            // Your private access key (change this to your preferred password)
             const ACCESS_KEY = 'MyAI2024@Secure';
-
-            const languages = ['javascript', 'python', 'java', 'cpp', 'rust', 'go', 'typescript', 'php', 'ruby', 'swift'];
-            const qualityOptions = ['fast', 'balanced', 'optimized', 'production'];
-
-            const scrollToBottom = () => {
-                messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-            };
-
-            useEffect(() => {
-                scrollToBottom();
-            }, [conversation]);
 
             const handleLogin = () => {
                 if (password === ACCESS_KEY) {
@@ -175,241 +110,28 @@
 
             const generateCode = async (prompt) => {
                 setIsGenerating(true);
+                await new Promise(resolve => setTimeout(resolve, 1500));
                 
-                // Simulate AI processing with realistic delay
-                await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
-                
-                const codeExamples = {
-                    javascript: {
-                        'create a function': `function processData(data) {
-  return data
-    .filter(item => item.isActive)
-    .map(item => ({
-      ...item,
-      processed: true,
-      timestamp: Date.now()
-    }))
-    .sort((a, b) => a.priority - b.priority);
+                const sampleCode = `// AI-generated code for: ${prompt}
+function processRequest(data) {
+    // Optimized implementation
+    const result = data
+        .filter(item => item.isValid)
+        .map(item => ({
+            ...item,
+            processed: true,
+            timestamp: Date.now()
+        }));
+    
+    return result;
 }
 
 // Usage example
-const result = processData(userData);
-console.log(result);`,
-                        'api call': `async function fetchUserData(userId) {
-  try {
-    const response = await fetch(\`/api/users/\${userId}\`, {
-      headers: {
-        'Authorization': 'Bearer ' + token,
-        'Content-Type': 'application/json'
-      }
-    });
-    
-    if (!response.ok) {
-      throw new Error(\`HTTP error! status: \${response.status}\`);
-    }
-    
-    const userData = await response.json();
-    return userData;
-  } catch (error) {
-    console.error('Error fetching user:', error);
-    throw error;
-  }
-}`,
-                        'validation': `function validateEmail(email) {
-  const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
-  return emailRegex.test(email);
-}
-
-function validatePassword(password) {
-  const minLength = 8;
-  const hasUpperCase = /[A-Z]/.test(password);
-  const hasLowerCase = /[a-z]/.test(password);
-  const hasNumbers = /\\d/.test(password);
-  const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
-  
-  return password.length >= minLength && hasUpperCase && 
-         hasLowerCase && hasNumbers && hasSpecialChar;
-}`,
-                        'algorithm': `function quickSort(arr) {
-  if (arr.length <= 1) return arr;
-  
-  const pivot = arr[Math.floor(arr.length / 2)];
-  const left = arr.filter(x => x < pivot);
-  const middle = arr.filter(x => x === pivot);
-  const right = arr.filter(x => x > pivot);
-  
-  return [...quickSort(left), ...middle, ...quickSort(right)];
-}
-
-// O(n log n) average case, O(n²) worst case
-const sortedArray = quickSort([3, 6, 8, 10, 1, 2, 1]);`,
-                        'default': `// AI-generated optimized solution
-const efficientSolution = (input) => {
-  // Optimized implementation with O(n) time complexity
-  const result = [];
-  const seen = new Set();
-  
-  for (const item of input) {
-    const key = typeof item === 'object' ? item.id : item;
-    if (!seen.has(key)) {
-      seen.add(key);
-      result.push(item);
-    }
-  }
-  
-  return result;
-};
-
-// Usage with performance tracking
-console.time('execution');
-const output = efficientSolution(inputData);
-console.timeEnd('execution');`
-                    },
-                    python: {
-                        'function': `def process_data(data: list) -> list:
-    """
-    Optimized data processing with type hints and error handling
-    Time complexity: O(n log n)
-    """
-    if not data:
-        return []
-    
-    try:
-        processed = [
-            {**item, 'processed': True, 'timestamp': time.time()}
-            for item in data
-            if item.get('is_active', False)
-        ]
-        return sorted(processed, key=lambda x: x.get('priority', 0))
-    except Exception as e:
-        print(f"Error processing data: {e}")
-        return []`,
-                        'class': `class DataProcessor:
-    """High-performance data processor with caching"""
-    
-    def __init__(self, config: dict):
-        self.config = config
-        self._cache = {}
-        self._stats = {'processed': 0, 'cached': 0}
-    
-    def process(self, data: list) -> list:
-        """Process data with intelligent caching"""
-        if not data:
-            return []
-        
-        result = []
-        for item in data:
-            key = item.get('id')
-            if key in self._cache:
-                result.append(self._cache[key])
-                self._stats['cached'] += 1
-            else:
-                processed = self._transform(item)
-                self._cache[key] = processed
-                result.append(processed)
-                self._stats['processed'] += 1
-        
-        return result
-    
-    def _transform(self, item: dict) -> dict:
-        """Transform individual item"""
-        return {
-            **item,
-            'processed': True,
-            'timestamp': time.time(),
-            'version': self.config.get('version', '1.0')
-        }
-    
-    def get_stats(self) -> dict:
-        return self._stats.copy()`,
-                        'algorithm': `def binary_search(arr: list, target: int) -> int:
-    """
-    Optimized binary search implementation
-    Time: O(log n), Space: O(1)
-    """
-    left, right = 0, len(arr) - 1
-    
-    while left <= right:
-        mid = (left + right) // 2
-        
-        if arr[mid] == target:
-            return mid
-        elif arr[mid] < target:
-            left = mid + 1
-        else:
-            right = mid - 1
-    
-    return -1
-
-# Example usage with performance test
-import time
-test_array = list(range(1000000))
-start = time.time()
-result = binary_search(test_array, 999999)
-end = time.time()
-print(f"Found at index: {result}, Time: {end - start:.6f}s")`,
-                        'default': `# AI-generated optimized Python solution
-def efficient_solution(data):
-    """
-    Optimized algorithm with O(n) time complexity
-    Handles edge cases and provides robust error handling
-    """
-    if not data:
-        return []
-    
-    # Use set for O(1) lookup time
-    seen = set()
-    result = []
-    
-    for item in data:
-        # Handle different data types
-        key = item if isinstance(item, (str, int, float)) else str(item)
-        
-        if key not in seen:
-            seen.add(key)
-            result.append(item)
-    
-    return result
-
-# Performance testing
-import timeit
-test_data = list(range(10000)) * 2
-execution_time = timeit.timeit(
-    lambda: efficient_solution(test_data), 
-    number=100
-)
-print(f"Average execution time: {execution_time/100:.6f}s")`
-                    }
-                };
-
-                const langExamples = codeExamples[selectedLanguage] || codeExamples.javascript;
-                let code = langExamples.default;
-                
-                // Enhanced keyword matching
-                const lowerPrompt = prompt.toLowerCase();
-                if (lowerPrompt.includes('function') || lowerPrompt.includes('method')) {
-                    code = langExamples.function || langExamples.default;
-                } else if (lowerPrompt.includes('class') || lowerPrompt.includes('object')) {
-                    code = langExamples.class || langExamples.default;
-                } else if (lowerPrompt.includes('api') || lowerPrompt.includes('fetch') || lowerPrompt.includes('request')) {
-                    code = langExamples['api call'] || langExamples.default;
-                } else if (lowerPrompt.includes('valid') || lowerPrompt.includes('check')) {
-                    code = langExamples.validation || langExamples.default;
-                } else if (lowerPrompt.includes('sort') || lowerPrompt.includes('algorithm') || lowerPrompt.includes('search')) {
-                    code = langExamples.algorithm || langExamples.default;
-                }
-
-                const metrics = {
-                    linesOfCode: code.split('\n').length,
-                    complexity: Math.floor(Math.random() * 5) + 1,
-                    performance: ['Excellent', 'Good', 'Optimized', 'Production-Ready'][Math.floor(Math.random() * 4)],
-                    generationTime: (Math.random() * 2 + 0.5).toFixed(1),
-                    memoryUsage: (Math.random() * 50 + 10).toFixed(1),
-                    efficiency: Math.floor(Math.random() * 20) + 80
-                };
+const output = processRequest(inputData);
+console.log(output);`;
 
                 setIsGenerating(false);
-                return { code, metrics };
+                return sampleCode;
             };
 
             const handleSubmit = async () => {
@@ -421,13 +143,11 @@ print(f"Average execution time: {execution_time/100:.6f}s")`
                 const currentInput = input;
                 setInput('');
 
-                const result = await generateCode(currentInput);
+                const code = await generateCode(currentInput);
                 
                 const aiMessage = {
                     type: 'ai',
-                    content: result.code,
-                    language: selectedLanguage,
-                    metrics: result.metrics,
+                    content: code,
                     timestamp: new Date().toLocaleTimeString()
                 };
                 
@@ -436,29 +156,6 @@ print(f"Average execution time: {execution_time/100:.6f}s")`
 
             const copyCode = (code) => {
                 navigator.clipboard.writeText(code);
-            };
-
-            const downloadCode = (code, language) => {
-                const extensions = {
-                    javascript: 'js',
-                    python: 'py',
-                    java: 'java',
-                    cpp: 'cpp',
-                    rust: 'rs',
-                    go: 'go',
-                    typescript: 'ts',
-                    php: 'php',
-                    ruby: 'rb',
-                    swift: 'swift'
-                };
-                
-                const blob = new Blob([code], { type: 'text/plain' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `ai_generated_code.${extensions[language] || 'txt'}`;
-                a.click();
-                URL.revokeObjectURL(url);
             };
 
             // Authentication Screen
@@ -486,4 +183,131 @@ print(f"Average execution time: {execution_time/100:.6f}s")`
                                     />
                                     <button
                                         type="button"
-                                        onClick={() => set
+                                        onClick={() => setShowPassword(!showPassword)}
+                                        className="absolute right-3 top-3 text-slate-400 hover:text-white"
+                                    >
+                                        {showPassword ? <EyeOff /> : <Eye />}
+                                    </button>
+                                </div>
+                                
+                                {authError && (
+                                    <div className="bg-red-500 bg-opacity-20 text-red-400 px-4 py-2 rounded-lg text-sm">
+                                        {authError}
+                                    </div>
+                                )}
+                                
+                                <button
+                                    onClick={handleLogin}
+                                    className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-lg font-semibold hover:from-purple-600 hover:to-pink-600 transition-all"
+                                >
+                                    Access Assistant
+                                </button>
+                                
+                                <div className="text-center text-slate-400 text-sm mt-4">
+                                    <p>Demo access key: MyAI2024@Secure</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                );
+            }
+
+            // Main Assistant Interface
+            return (
+                <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+                    <div className="container mx-auto px-4 py-8">
+                        <div className="bg-slate-800 rounded-2xl border border-slate-700 shadow-2xl h-[80vh] flex flex-col">
+                            {/* Header */}
+                            <div className="flex justify-between items-center p-6 border-b border-slate-700">
+                                <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                                    AI Coding Assistant
+                                </h1>
+                                <button
+                                    onClick={handleLogout}
+                                    className="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg text-sm transition-colors"
+                                >
+                                    Logout
+                                </button>
+                            </div>
+
+                            {/* Conversation */}
+                            <div className="flex-1 overflow-y-auto p-6 space-y-4">
+                                {conversation.length === 0 ? (
+                                    <div className="text-center text-slate-400 mt-20">
+                                        <p className="text-lg">Welcome to your AI Coding Assistant!</p>
+                                        <p className="text-sm mt-2">Ask me to generate code, explain concepts, or help with programming tasks.</p>
+                                    </div>
+                                ) : (
+                                    conversation.map((message, index) => (
+                                        <div key={index} className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}>
+                                            <div className={`max-w-[80%] p-4 rounded-lg ${
+                                                message.type === 'user' 
+                                                    ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white' 
+                                                    : 'bg-slate-700 text-slate-200'
+                                            }`}>
+                                                {message.type === 'user' ? (
+                                                    <p>{message.content}</p>
+                                                ) : (
+                                                    <div>
+                                                        <div className="flex justify-between items-center mb-2">
+                                                            <span className="text-sm text-slate-400">Generated Code</span>
+                                                            <button
+                                                                onClick={() => copyCode(message.content)}
+                                                                className="text-slate-400 hover:text-white transition-colors"
+                                                            >
+                                                                <Copy />
+                                                            </button>
+                                                        </div>
+                                                        <pre className="bg-slate-800 p-3 rounded text-sm overflow-x-auto">
+                                                            <code>{message.content}</code>
+                                                        </pre>
+                                                        <div className="text-xs text-slate-400 mt-2">
+                                                            Generated at {message.timestamp}
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    ))
+                                )}
+                                
+                                {isGenerating && (
+                                    <div className="flex justify-start">
+                                        <div className="bg-slate-700 p-4 rounded-lg">
+                                            <div className="animate-pulse">Generating code...</div>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* Input */}
+                            <div className="p-6 border-t border-slate-700">
+                                <div className="flex space-x-4">
+                                    <input
+                                        type="text"
+                                        value={input}
+                                        onChange={(e) => setInput(e.target.value)}
+                                        onKeyPress={(e) => e.key === 'Enter' && handleSubmit()}
+                                        placeholder="Describe the code you want to generate..."
+                                        className="flex-1 bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                        disabled={isGenerating}
+                                    />
+                                    <button
+                                        onClick={handleSubmit}
+                                        disabled={isGenerating || !input.trim()}
+                                        className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 disabled:opacity-50 disabled:cursor-not-allowed px-6 py-3 rounded-lg font-semibold transition-all"
+                                    >
+                                        <Send />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<AICodingAssistant />, document.getElementById('root'));
+    </script>
+</body>
+</html>
